@@ -10,9 +10,8 @@ This tool needs [exiftool](https://exiftool.org/install.html) to be available in
 
 # Supported OS platforms
 [exiftool](https://exiftool.org/) works on Linux, Windows and MacOS.
-However, due to limits of using exiftool-wrapper named **go-exiftool**, this tool works only on OSes with '\n' line breaker (Linux).
-Windows and MacOS will be available later after [this PR](https://github.com/barasher/go-exiftool/pull/7) are approved and
-**media-storage-cataloger**'s dependencies are updated.
+The dependency library [go-exiftool](https://github.com/barasher/go-exiftool) now supports Linux, Windows and MacOS too.
+So the tool should work on the all 3 OS platforms. 
 
 # Command "rename"
 It renames media files according to their probable date taken: `IMG_2024.jpg` => `2019.03.08 19.30.30.dt (IMG_2024).jpg`.
@@ -84,3 +83,5 @@ for the golang library that wraps ExifTool.
 # Changelog
 - v1.0.0
   - Implement a basic app and command "rename"
+- v1.0.1
+  - Update dependency [go-exiftool](https://github.com/barasher/go-exiftool) to v1.1.3 (Support Windows and MacOS)
