@@ -73,3 +73,14 @@ exiftool -tagsfromfile '%d%f.heic' -r -ext jpg -all:all -overwrite_original_in_p
 
 # Contributing
 Feel free to create PRs :)
+
+# Thanks
+- Phil Harvey and the company, the authors of [exiftool](https://exiftool.org/), for the great command-line application
+to read, write and edit meta information in a wide variety of files.
+- Barasher, the author of [go-exiftool](https://github.com/barasher/go-exiftool), and contributors of the project
+for the golang library that wraps ExifTool.
+- Everything and everyone, what or who makes this world better :)
+
+# Changelog
+- v1.0.0
+  - Implement a basic app and command "rename"
