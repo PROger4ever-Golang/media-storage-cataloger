@@ -62,6 +62,21 @@ totalMediaActions: 1
 
 Then rename it with `--action execute` option.
 
+# Build example
+```shell script
+export MEDIA_STORAGE_CATALOGER_VERSION=v1.0.1 && export MEDIA_STORAGE_CATALOGER_GO_VERSION=$(go version | sed 's#go version \(.*\?\) \w\+/\w\+#\1#') && \
+GOOS_OLD="$GOOS" && GOARCH_OLD="$GOARCH" && \
+rm media-storage-cataloger* && \
+export GOOS=linux && export GOARCH=amd64 && go build -o "media-storage-cataloger-$MEDIA_STORAGE_CATALOGER_VERSION ($GOOS, $GOARCH x64 64bit, $MEDIA_STORAGE_CATALOGER_GO_VERSION)" && \
+export GOOS=linux && export GOARCH=386 && go build -o "media-storage-cataloger-$MEDIA_STORAGE_CATALOGER_VERSION ($GOOS, $GOARCH x86 32bit, $MEDIA_STORAGE_CATALOGER_GO_VERSION)" && \
+export GOOS=windows && export GOARCH=amd64 && go build -o "media-storage-cataloger-$MEDIA_STORAGE_CATALOGER_VERSION ($GOOS, $GOARCH x64 64bit, $MEDIA_STORAGE_CATALOGER_GO_VERSION).exe" && \
+export GOOS=windows && export GOARCH=386 && go build -o "media-storage-cataloger-$MEDIA_STORAGE_CATALOGER_VERSION ($GOOS, $GOARCH x86 32bit, $MEDIA_STORAGE_CATALOGER_GO_VERSION).exe" && \
+export GOOS=darwin && export GOARCH=amd64 && go build -o "media-storage-cataloger-$MEDIA_STORAGE_CATALOGER_VERSION (macos, $GOARCH x64 64bit, $MEDIA_STORAGE_CATALOGER_GO_VERSION)" && \
+export GOOS=darwin && export GOARCH=386 && go build -o "media-storage-cataloger-$MEDIA_STORAGE_CATALOGER_VERSION (macos, $GOARCH x86 32bit, $MEDIA_STORAGE_CATALOGER_GO_VERSION)" && \
+chmod +x media-storage-cataloger* && \
+export GOOS="$GOOS_OLD" && export GOARCH="$GOARCH_OLD"
+```
+
 # Additional info
 You can convert a lot media files on Windows with [IrfanView](https://www.irfanview.com/) (eg, ***.heic** => ***.jpg**).
 
