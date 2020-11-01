@@ -103,3 +103,5 @@ for the golang library that wraps ExifTool.
 - v1.0.2
   - Update dependency [go-exiftool](https://github.com/barasher/go-exiftool) to v1.3.1 (Fix supporting of Windows and
   MacOS platforms)
+- v1.0.3
+  - Fix timezone parsing

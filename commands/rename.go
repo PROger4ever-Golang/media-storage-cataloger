@@ -85,7 +85,9 @@ func parseTimezone(timezoneString string) (loc *time.Location, err error) {
 		return
 	}
 
-	loc = time.FixedZone(timezoneString, int(timezoneSign*timezoneHour*60*timezoneMin))
+	offset := timezoneSign * (timezoneHour*3600 + timezoneMin*60)
+
+	loc = time.FixedZone(timezoneString, int(offset))
 	return
 }
 
