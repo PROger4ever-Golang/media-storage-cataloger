@@ -374,7 +374,7 @@ func runRename(cmd *cobra.Command, args []string) (err error) {
 
 		if err == errDateTakenInExifNotFound {
 			dateTaken, err = parseDateFromFilename(originalFilename)
-			if errors.Cause(err) != errDateTakenInOriginalFilenameNotFound {
+			if err != nil && errors.Cause(err) != errDateTakenInOriginalFilenameNotFound {
 				return errors.Wrap(err, "parseDateFromFilename()")
 			}
 			dateSource = "dn"
