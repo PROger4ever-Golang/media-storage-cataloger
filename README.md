@@ -100,3 +100,6 @@ for the golang library that wraps ExifTool.
   - Implement a basic app and command "rename"
 - v1.0.1
   - Update dependency [go-exiftool](https://github.com/barasher/go-exiftool) to v1.1.3 (Support Windows and MacOS)
+- v1.0.2
+  - Update dependency [go-exiftool](https://github.com/barasher/go-exiftool) to v1.3.1 (Fix supporting of Windows and
+  MacOS platforms)

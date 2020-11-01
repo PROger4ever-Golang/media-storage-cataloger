@@ -324,7 +324,7 @@ func runRename(cmd *cobra.Command, args []string) (err error) {
 
 	maxDatesDistanceInMilliseconds := maxDatesDistance.Milliseconds()
 
-	exifTool, err := exifToolLib.NewExiftool()
+	exifTool, err := exifToolLib.NewExiftool(exifToolLib.Charset("filename=utf8"))
 	if err != nil {
 		return errors.Wrap(err, "NewExiftool()")
 	}
